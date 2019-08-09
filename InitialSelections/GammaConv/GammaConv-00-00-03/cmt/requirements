@@ -1,0 +1,38 @@
+package GammaConv
+author qin liqing <qinlq@ihep.ac.cn>
+
+branches cmt src GammaConv
+
+use BesPolicy BesPolicy-01-*
+use GaudiInterface GaudiInterface-01-* External
+use GaudiAlg v*
+
+use BesCLHEP BesCLHEP-* External
+use MYSQL  MYSQL-*      External
+
+use McTruth    McTruth-*   Event
+
+use DstEvent  DstEvent-* Event
+use EventModel  EventModel-* Event
+use EvtRecEvent  EvtRecEvent-* Event
+
+use BesROOT    BesROOT-00-*    External
+
+use MdcRawEvent MdcRawEvent-*  Mdc
+use MdcRecEvent MdcRecEvent-*  Mdc
+use EmcRecEventModel EmcRecEventModel-* Emc
+use MagneticField MagneticField-*
+
+use VertexFit VertexFit-* Analysis
+
+apply_pattern installed_linkopts
+
+macro_append GammaConv_cppflags "-w"
+library GammaConv ../src/*.cxx
+
+apply_pattern package_linkopts
+apply_pattern package_stamps
+apply_pattern ld_library_path
+
+apply_pattern package_shlibflags
+

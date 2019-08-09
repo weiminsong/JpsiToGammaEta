@@ -1,0 +1,44 @@
+package gamConvFacAlg
+
+use BesPolicy BesPolicy-*
+use GaudiInterface GaudiInterface-* External
+
+use DstEvent DstEvent-* Event
+use EventModel   EventModel-*  Event
+use EvtRecEvent EvtRecEvent-* Event
+
+use VertexFit    VertexFit-*   Analysis 
+use ParticleID   ParticleID-*  Analysis
+
+use BesROOT      BesROOT-00-*     External
+
+use EventNavigator EventNavigator-* Event
+use McTruth McTruth-* Event
+use EmcRecEventModel EmcRecEventModel-* Emc
+use MdcRecEvent MdcRecEvent-* Mdc
+use MdcRawEvent MdcRawEvent-* Mdc
+use MucRecEvent MucRecEvent-* Muc
+use TofRecEvent TofRecEvent-* Tof
+
+use EvTimeEvent     EvTimeEvent-*     Event
+use MagneticField   MagneticField-*
+use Identifier      Identifier-*      DetectorDescription
+
+use McCor           McCor-*           Analysis/PhotonCor
+use AbsCor          AbsCor-*          Analysis/PhotonCor
+use GammaConv       GammaConv-*       
+
+use RootCnvSvc      *                 Event
+
+#=========   use BParticle   ========
+#use CommonAlg CommonAlg-* 
+#use Header Header-* BPAT
+#use BParticle BParticle-* BPAT
+#use BWTrack BWTrack-* BPAT
+#use IOBesAna IOBesAna-* BPAT
+#use BesAna BesAna-* BPAT
+
+apply_pattern component_library 
+library gamConvFacAlg  *.cxx  components/*.cxx
+
+apply_pattern declare_runtime files=*.txt

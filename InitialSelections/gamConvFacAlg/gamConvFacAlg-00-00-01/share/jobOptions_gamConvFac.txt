@@ -1,0 +1,2 @@
+ApplicationMgr.DLLs += {"gamConvFacAlg"};
+ApplicationMgr.TopAlg += { "gamConvFac" };
