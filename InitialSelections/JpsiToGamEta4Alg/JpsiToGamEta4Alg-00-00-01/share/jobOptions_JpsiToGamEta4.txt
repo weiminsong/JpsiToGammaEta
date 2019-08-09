@@ -1,0 +1,2 @@
+ApplicationMgr.DLLs += {"JpsiToGamEta4Alg"};
+ApplicationMgr.TopAlg += { "JpsiToGamEta4" };
